@@ -4,13 +4,13 @@ const person = {
     age: 22,
     getInfo: function(object=this, tabulation=0) {
         for(const key in object) {
-            if(typeof object[key] !== "function" && typeof object[key] !== 'object') {
-                console.log(`${'\t'.repeat(tabulation)}${key}: ${object[key]}`)
-            } else if(typeof object[key] === 'object') {
+            if(typeof object[key] === 'object' && object[key] !== null) {
                 console.log(`${'\t'.repeat(tabulation)}${key}: {`)
                 this.getInfo(object[key], tabulation+1)
                 console.log(`${'\t'.repeat(tabulation)}}`)
-            }
+            } else if(typeof object[key] !== "function") {
+                console.log(`${'\t'.repeat(tabulation)}${key}: ${object[key]}`)
+            } 
         }
     }
 }
