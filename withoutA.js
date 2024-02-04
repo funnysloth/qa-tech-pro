@@ -1,4 +1,4 @@
-let regex = /[^a]{6,}/gmi
+let regex = /([^a\n]){6,}/gmi
 
 let testString = `SometaSomethASomethasome4asome4A`
 
